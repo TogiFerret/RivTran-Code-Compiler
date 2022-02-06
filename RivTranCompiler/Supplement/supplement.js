@@ -17,6 +17,14 @@ function g_o() {
 // Wow that was so much shorter than I thought
 //
 // Basically, dot things, vars, loops, and functions; THe ability to do that is here
+
+var realConsoleLog = console.log;
+console.log = function () {
+    var message = [].join.call(arguments, " ");
+    // Display the message somewhere... (jQuery example)
+    $(".output").text(message);
+    realConsoleLog.apply(console, arguments);
+};
 function consoleLog(message) {
   console.log(message);
 }
