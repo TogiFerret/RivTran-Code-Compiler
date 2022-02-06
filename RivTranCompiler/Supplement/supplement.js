@@ -1,10 +1,17 @@
 // More freaking things to get other things to work //
+var editor = CodeMirror.fromTextArea(document.getElementById('entercode'), {
+    lineNumbers: true,
+    
+});
 function s_plitLines(t) { return t.split(/\r\n|\r|\n/); }
 function g_o() {
-  var code = document.getElementById("entercode").value;
+  var code = editor.getValue();
   var listOCode = s_plitLines(code);
   listOCode.forEach(lineOCode => {
+    if (lineOCode.startsWith("//")){
+    } else {
       eval(c_ompiler(lineOCode));
+    }
   })
 }
 // Wow that was so much shorter than I thought

@@ -90,3 +90,7 @@ button.icon svg,
   width: 30px;
   height: 30px;
 }
+
+textarea {
+  border: solid 2px black;
+}
